@@ -83,6 +83,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wby-N1-4l3"/>
+                    <connections>
+                        <outlet property="loginButton" destination="h6b-xR-q5T" id="iCi-SM-o1Y"/>
+                        <outlet property="signUpButton" destination="weI-UF-HGh" id="4hO-Ta-cuD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,8 +153,8 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="EcR-bq-gIN">
-                                <rect key="frame" x="16" y="584" width="382" height="107"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="EcR-bq-gIN">
+                                <rect key="frame" x="16" y="584" width="382" height="71.5"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-e3-v2w">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -168,26 +172,22 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="oIO-rP-yhu" eventType="touchUpInside" id="NNM-yI-9z7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkS-uM-eQR">
-                                        <rect key="frame" x="267" y="45" width="115" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Forget Password">
-                                            <color key="titleColor" systemColor="systemBlueColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnV-Ou-VM0">
-                                        <rect key="frame" x="0.0" y="75" width="382" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Error">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
-                                        </state>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhU-iE-55N">
+                                        <rect key="frame" x="0.0" y="51" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="wRU-e3-v2w" firstAttribute="leading" secondItem="EcR-bq-gIN" secondAttribute="leading" id="8Dx-yw-QqV"/>
-                                    <constraint firstItem="tnV-Ou-VM0" firstAttribute="centerX" secondItem="EcR-bq-gIN" secondAttribute="centerX" id="lpD-ZF-CKe"/>
+                                    <constraint firstItem="rhU-iE-55N" firstAttribute="top" secondItem="wRU-e3-v2w" secondAttribute="bottom" constant="2" id="LJW-vt-hf5"/>
+                                    <constraint firstItem="rhU-iE-55N" firstAttribute="centerX" secondItem="EcR-bq-gIN" secondAttribute="centerX" id="t6a-vt-NA4"/>
+                                    <constraint firstItem="rhU-iE-55N" firstAttribute="top" secondItem="wRU-e3-v2w" secondAttribute="bottom" constant="4" id="zkU-8F-VFE"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwd-a9-aMv">
@@ -204,7 +204,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <segue destination="N6V-g4-HbR" kind="show" id="SIO-9D-cRJ"/>
+                                            <segue destination="N6V-g4-HbR" kind="show" id="DXl-uD-0BI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -233,6 +233,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AMX-L5-LJs"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="GrC-LR-kUi" id="oVD-ff-9Wk"/>
+                        <outlet property="errorLabel" destination="rhU-iE-55N" id="rFv-Vy-DoN"/>
+                        <outlet property="firstNameTextField" destination="xWE-bi-Zb1" id="3nq-tJ-TQm"/>
+                        <outlet property="passwordTextfield" destination="ACT-Uu-GZl" id="raQ-WX-b71"/>
+                        <outlet property="secondNameTextField" destination="a5y-15-bEO" id="pwk-33-aH8"/>
+                        <outlet property="signUpButtom" destination="wRU-e3-v2w" id="hZ8-SU-BhE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apq-kg-Cl2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,7 +249,7 @@
         <!--Home View Controller-->
         <scene sceneID="i18-4u-Bt7">
             <objects>
-                <viewController id="bRp-gk-Cyb" customClass="HomeViewController" customModule="NewsLens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="bRp-gk-Cyb" customClass="HomeViewController" customModule="NewsLens" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VGM-Jv-p7q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +293,7 @@
         <!--Login View Controller-->
         <scene sceneID="mNP-7P-541">
             <objects>
-                <viewController id="N6V-g4-HbR" customClass="LoginViewController" customModule="NewsLens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="N6V-g4-HbR" customClass="LoginViewController" customModule="NewsLens" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lD1-vQ-oUH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,8 +335,8 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="hLa-ij-DpH">
-                                <rect key="frame" x="16" y="454" width="382" height="105"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="hLa-ij-DpH">
+                                <rect key="frame" x="16" y="454" width="382" height="71.5"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlK-ne-BR2">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -346,24 +354,19 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="N6V-g4-HbR" eventType="touchUpInside" id="NiI-6d-NtG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDH-lr-sWN">
-                                        <rect key="frame" x="267" y="45" width="115" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Forget Password">
-                                            <color key="titleColor" systemColor="systemBlueColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJv-au-oYy">
-                                        <rect key="frame" x="0.0" y="75" width="382" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Error">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
-                                        </state>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginVC" text="error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-10-WqB">
+                                        <rect key="frame" x="0.0" y="51" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="QJv-au-oYy" firstAttribute="centerX" secondItem="hLa-ij-DpH" secondAttribute="centerX" id="nSp-Jr-BSJ"/>
+                                    <constraint firstItem="Q1z-10-WqB" firstAttribute="centerX" secondItem="hLa-ij-DpH" secondAttribute="centerX" id="c4X-ea-xi2"/>
                                     <constraint firstItem="UlK-ne-BR2" firstAttribute="leading" secondItem="hLa-ij-DpH" secondAttribute="leading" id="uSr-Kk-Xmg"/>
                                 </constraints>
                             </stackView>
@@ -381,7 +384,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <segue destination="oIO-rP-yhu" kind="show" id="n8k-Ay-uEC"/>
+                                            <segue destination="oIO-rP-yhu" kind="show" id="JNf-Np-vKm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -410,6 +413,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JVu-Rd-pNk"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="3wh-dr-ugM" id="fkU-dt-ci9"/>
+                        <outlet property="errorLable" destination="Q1z-10-WqB" id="oVS-jq-l0j"/>
+                        <outlet property="loginButton" destination="UlK-ne-BR2" id="Aj0-Lg-m84"/>
+                        <outlet property="passwordTextFiel" destination="TBH-hw-cnY" id="q2L-YG-LKb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKq-G0-dUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,17 +426,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SIO-9D-cRJ"/>
-        <segue reference="n8k-Ay-uEC"/>
+        <segue reference="DXl-uD-0BI"/>
+        <segue reference="JNf-Np-vKm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="750" height="1624"/>
         <image name="newLens" width="405" height="324"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

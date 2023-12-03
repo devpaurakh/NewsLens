@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
             }
             else {
                 self.toHome()
+                self.saveStatus()
                 
             }
         }
@@ -65,9 +66,10 @@ class LoginViewController: UIViewController {
         view.window?.makeKeyAndVisible()
     }
     
-    //This function will save login state
-    func saveLoginState() {
-        // Store a flag or user information locally to indicate the user is logged in
-        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+  
+    
+    func saveStatus(){
+        UserDefaults.standard.set(true, forKey:"isLoginned")
+        UserDefaults.standard.synchronize()
     }
 }

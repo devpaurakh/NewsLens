@@ -1,0 +1,6 @@
+framework module Pods_NewsLens {
+  umbrella header "Pods-NewsLens-umbrella.h"
+
+  export *
+  module * { export * }
+}

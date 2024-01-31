@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
                        
                         switch result{
                         case .success(let json):
-                            print(json!)
+                           // print(json!)
                             _ = (json as! ResponseModel).name
                             _ = (json as! ResponseModel).email
                             //Saving the token in the userdefault in the login button clicked
